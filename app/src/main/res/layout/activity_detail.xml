@@ -1,33 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#FFFFFF">
+    android:background="#000000"
+    tools:context=".DetailActivity">
+
+    <ImageView
+        android:id="@+id/ivDetailPoster"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo_app"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvDetailTitle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Título de la Película"
+        android:textColor="#D4AF37"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="#000000"
-        android:text="Título de la Película"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivDetailPoster" />
 
     <TextView
         android:id="@+id/tvDetailGenre"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Género | Año"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:text="Género: Acción"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDetailTitle" />
 
     <TextView
-        android:id="@+id/tvDetailYear"
+        android:id="@+id/tvDetailDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="18sp"
-        android:text="Año: 2024"/>
-</LinearLayout>
+        android:layout_margin="16dp"
+        android:text="Aquí se mostrará la descripción detallada de la película una vez que conectemos Room y la API con Retrofit."
+        android:textColor="#BDBDBD"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvDetailGenre" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,9 +18,9 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Usamos lifecycleScope para lanzar una corrutina (exigencia de la rúbrica)
+        // Usamos lifecycleScope para lanzar una corrutina
         lifecycleScope.launch {
-            delay(2500) // Espera 2.5 segundos (2500 milisegundos)
+            delay(2500) // Espera 2.5 segundos
 
             // Navegamos hacia el MainActivity
             val intent = Intent(this@SplashActivity, MainActivity::class.java)
